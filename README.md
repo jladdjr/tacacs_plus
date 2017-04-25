@@ -5,7 +5,7 @@ Setup a TACACS+ server using [`tac_plus`](http://www.shrubbery.net/tac_plus/) fr
 
 While TACACS+ supports Authentication, Authorization, and Accounting (AAA), this role is limited to configuring
 authentication. When calling the role, a list of users should be passed in (along with PAP or ascii passwords for each user). 
-This information is used to generate a ['tac_plus' configuration file](templates/etc-tac_plus.conf.j2).
+This information is used to generate a [`tac_plus` configuration file](templates/tac_plus.conf.j2).
 
 Requirements
 ------------
@@ -29,7 +29,7 @@ When calling the `tacacs` role, a list of users should be provided. Each user sh
 `pap_password`, `ascii_password`, or both.
 
 Note: The role will not actually create user accounts on the target host. They will only be defined in the 
-['tac_plus' configuration file](templates/etc-tac_plus.conf.j2).
+['tac_plus' configuration file](templates/tac_plus.conf.j2).
 
 ```
 ---
