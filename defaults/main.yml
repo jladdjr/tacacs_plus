@@ -1,0 +1,4 @@
+---
+
+tacacs_secret_key: CHANGEME
+tacacs_users: []

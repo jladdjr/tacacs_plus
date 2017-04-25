@@ -1,0 +1,4 @@
+---
+- name: restart tac_plus
+  service: name=tac_plus state=restarted
+  when: ansible_connection != 'docker'
