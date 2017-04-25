@@ -36,6 +36,7 @@ Note: The role will not actually create user accounts on the target host. They w
 - hosts: tacacs
   roles:
      - role: jladdjr.tacacs_plus
+       tacacs_secret_key: CHANGEME
        tacacs_users:
           - username: alice
             pap_password: alice_pap
@@ -45,6 +46,18 @@ Note: The role will not actually create user accounts on the target host. They w
           - username: chris
             ascii_password: chris_ascii
 ```
+
+Ansible Container
+-----------------
+
+To build a container using this role:
+
+1. Update role configuration in [ansible/main.yml](ansible/main.yml).
+2. Run `ansible-container build` (from this directory). Note that `ansible-container` will install this role from Ansible Galaxy (not the role files present here). This setting can be changed in [ansible/requirements.yml](ansible/requirements.yml). (Examples of how this file can be reconfigured are available [here](http://docs.ansible.com/ansible/galaxy.html#installing-multiple-roles-from-a-file)). 
+
+To start the container, run:
+
+`docker run -it -p 49:49 tacacs_plus_container-tacacs`
 
 License
 -------

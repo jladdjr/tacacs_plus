@@ -1,0 +1,10 @@
+galaxy_info:
+  author: James Ladd, Jr.
+  description: tac_plus server (authentication only) 
+  company: Red Hat, Inc.
+
+  license: MIT 
+
+  min_ansible_container_version: 0.3.0
+
+  tags: []

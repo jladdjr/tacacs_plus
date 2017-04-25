@@ -1,0 +1,17 @@
+# Ansible playbook to provision container. An inventory will be automatically 
+# created using the names of the services from container.yml file.
+---
+- hosts: all
+  gather_facts: false
+  remote_user: root
+  roles:
+      - role: jladdjr.tacacs_plus
+        tacacs_secret_key: CHANGEME
+        tacacs_users:
+            - username: alice
+              pap_password: alice_pap
+              ascii_password: alice_ascii
+            - username: bill
+              pap_password: bill_pap
+            - username: chris
+              ascii_password: chris_ascii
